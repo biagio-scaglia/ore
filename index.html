@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore Ore Lavorate - Calendario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contatore Ore Lavorate</h1>
+
+        <!-- Navigazione Mese/Anno -->
+        <div id="calendar-header">
+            <button id="prev-month" class="nav-button">←</button>
+            <h2 id="month-year">Gennaio 2024</h2>
+            <button id="next-month" class="nav-button">→</button>
+        </div>
+
+        <!-- Calendario -->
+        <div id="calendar-container">
+            <div id="calendar"></div>
+        </div>
+
+        <!-- Form di inserimento attività -->
+        <div id="activity-form">
+            <h3>Inserisci Attività</h3>
+            <form id="work-form">
+                <label for="work-date">Data:</label>
+                <input type="date" id="work-date" required>
+
+                <label for="activity-name">Nome Attività:</label>
+                <input type="text" id="activity-name" required>
+
+                <label for="start-time">Inizio Lavoro:</label>
+                <input type="time" id="start-time" required>
+
+                <label for="end-time">Fine Lavoro:</label>
+                <input type="time" id="end-time" required>
+
+                <label for="overtime">Straordinari (ore):</label>
+                <input type="number" id="overtime" step="0.1" min="0">
+
+                <label for="status">Stato Attività:</label>
+                <select id="status">
+                    <option value="completata">Completata</option>
+                    <option value="in-corso">In corso</option>
+                    <option value="sospesa">Sospesa</option>
+                </select>
+
+                <label for="description">Descrizione:</label>
+                <textarea id="description" rows="3" placeholder="Descrizione attività..."></textarea>
+
+                <button type="submit">Aggiungi Attività</button>
+            </form>
+        </div>
+
+        <!-- Riepilogo delle Ore -->
+        <div id="summary">
+            <h3>Ore Totali nel Mese</h3>
+            <p id="total-hours">Ore Totali: 0 ore</p>
+        </div>
+
+        <!-- Footer -->
+       
+    </div>
+    <footer>
+       <a href="https://biagioscaglia.com"><p>Developed by Biagio Scaglia</p></a> 
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* Stili di base */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #2575fc;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#calendar-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+}
+
+.nav-button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #6a11cb;
+}
+
+#calendar-container {
+    margin-bottom: 30px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 15px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#calendar .day {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f4f7fc;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calendar .day:hover {
+    background-color: #e4e7f3;
+}
+
+#calendar .day span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#calendar .day .activity-marker {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+#calendar .day.completata .activity-marker {
+    background-color: green;
+}
+
+#calendar .day.in-corso .activity-marker {
+    background-color: yellow;
+}
+
+#calendar .day.sospesa .activity-marker {
+    background-color: red;
+}
+
+#activity-form {
+    margin-top: 50px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="date"], input[type="time"], input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a11cb;
+}
+
+#summary {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#summary h3 {
+    font-size: 1.4rem;
+    color: #2575fc;
+    margin-bottom: 10px;
+}
+
+#summary p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #6a11cb;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    input[type="date"], input[type="time"], input[type="text"], input[type="number"], select, textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+}
